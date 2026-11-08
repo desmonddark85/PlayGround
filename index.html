@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#18251e">
+<title>Hearthwild — Off-grid survival</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✳%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game-shell">
+  <section class="world" aria-label="Your homestead">
+    <canvas id="scene"></canvas>
+    <div class="world-vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✳</div><div><div class="brand-name">HEARTHWILD</div><div class="brand-sub">A little life, off the grid</div></div></div>
+      <div class="top-controls"><div class="season-chip"><span class="sun-icon">☀</span><span id="seasonLabel">SPRING</span><i></i><span id="weatherLabel">Clear</span></div><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♪</button></div>
+    </header>
+    <div class="day-card"><span class="day-kicker">YOUR HOMESTEAD</span><div class="day-line"><strong id="dayNumber">DAY 01</strong><span class="weather-dot"></span><span id="weatherShort">Mild · 18°</span></div><div class="day-progress"><span id="dayProgress"></span></div><div class="day-hint" id="dayHint">One day at a time.</div></div>
+    <div class="world-label label-tent" id="shelterLabel"><span class="label-dot"></span><span>TENT</span></div>
+    <div class="world-label label-garden"><span class="label-dot green"></span><span>GARDEN</span></div>
+    <div class="world-label label-solar"><span class="label-dot gold"></span><span>SOLAR ARRAY</span></div>
+    <div class="world-label label-water"><span class="label-dot blue"></span><span>WATER STORE</span></div>
+    <div class="toast" id="toast"></div>
+    <div class="scene-caption"><span class="caption-star">✦</span><span id="captionText">A quiet place to begin again.</span></div>
+    <div class="world-actions"><button class="round-action" id="rotateBtn" title="Change view">↻</button><button class="round-action" id="zoomBtn" title="Zoom view">⌕</button></div>
+  </section>
+  <aside class="dashboard">
+    <div class="welcome-row"><div><div class="eyebrow" id="chapterLabel">CHAPTER ONE · A PLACE TO LAND</div><h1 id="welcomeTitle">Make this place<br><em>your own.</em></h1></div><button class="help-btn" id="guideBtn" aria-label="Field guide">?</button></div>
+    <div class="survival-row">
+      <div class="survival-cell"><div class="metric-top"><span class="metric-icon need-food">⌁</span><span>HUNGER</span><b id="foodVal">78</b></div><div class="meter"><span id="foodMeter" class="meter-food"></span></div><small id="foodHelp">A meal keeps you going</small></div>
+      <div class="survival-cell"><div class="metric-top"><span class="metric-icon need-water">◌</span><span>THIRST</span><b id="thirstVal">82</b></div><div class="meter"><span id="thirstMeter" class="meter-water"></span></div><small id="thirstHelp">Stay hydrated out here</small></div>
+      <div class="survival-cell"><div class="metric-top"><span class="metric-icon need-rest">☾</span><span>WELLBEING</span><b id="wellVal">92</b></div><div class="meter"><span id="wellMeter" class="meter-well"></span></div><small>Rest makes a difference</small></div>
+    </div>
+    <div class="resource-strip"><div><span class="resource-icon coin">◈</span><span><b id="coinVal">45</b><small>credits</small></span><button class="tiny-add" id="tradeBtn" title="Sell produce">↗</button></div><div><span class="resource-icon food">✿</span><span><b id="produceVal">3</b><small>harvest</small></span></div><div><span class="resource-icon water">◉</span><span><b id="waterVal">80</b><small>litres</small></span></div></div>
+    <div class="tabbar" role="tablist"><button class="tab active" data-tab="today">TODAY</button><button class="tab" data-tab="homestead">HOMESTEAD</button><button class="tab" data-tab="fieldbook">FIELD NOTES <span class="note-dot"></span></button></div>
+    <div class="content" id="content"></div>
+    <footer class="dashboard-footer"><span><span class="footer-dot"></span> YOUR STORY IS UNFOLDING</span><button id="resetBtn">Start fresh <span>↗</span></button></footer>
+  </aside>
+</main>
+<div class="modal-backdrop" id="modal"><section class="modal"><button class="modal-close" id="closeModal">×</button><div class="modal-flower">✳</div><div class="eyebrow">A FIELD GUIDE FOR THE CURIOUS</div><h2 id="modalTitle">Small choices.<br><em>Real know-how.</em></h2><div id="modalBody"></div><button class="primary-btn modal-ok" id="modalOk">Got it <span>→</span></button></section></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="game.js"></script>
+</body></html>
